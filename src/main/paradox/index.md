@@ -12,6 +12,6 @@ A collection of computing resources and learnings
  * [JVM](jvm.md)
  * [Hosting/Provisioning/Containers](hosting.md)
  * [Machine Learning](ml.md)
- * [Assorted](assorted.md)
+ * [Documentation Tools](documentation.md)
 
 @@@

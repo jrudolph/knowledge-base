@@ -8,7 +8,7 @@
 
 "Write, Plan, and Create Infrastructure as Code"
 
-Support for many hosting providers and tools.
+Support for many hosting [providers and tools](https://www.terraform.io/docs/providers/index.html).
 
 ### Helm
 

@@ -19,8 +19,7 @@ APIs.
  
 ### dlib
 
-[Homepage](http://dlib.net/)
-[Github](https://github.com/davisking/dlib)
+[Homepage](http://dlib.net/) | [Github](https://github.com/davisking/dlib)
 
 C++ and python APIs for all kinds of mathematical and ML tasks.
 
