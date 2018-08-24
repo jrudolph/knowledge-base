@@ -1,10 +1,17 @@
-# Project
+# @jrudolph's Knowledge Base
 
-This is my first documentation page!
+A collection of computing resources and learnings
+
+@@toc { depth=0 }
+
 
 @@@ index
 
- * [Overview](overview.md)
- * [Changelog](changelog.md)
+ * [log](log.md)
+ * [Scala](scala.md)
+ * [JVM](jvm.md)
+ * [Hosting/Provisioning/Containers](hosting.md)
+ * [Machine Learning](ml.md)
+ * [Assorted](assorted.md)
 
 @@@
