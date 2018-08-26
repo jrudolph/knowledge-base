@@ -1,8 +1,6 @@
-# Hosting/Provisioning/Containers
+# Provisioning
 
-## Provisioning
-
-### Terraform
+## Terraform
 
 [Homepage](https://www.terraform.io/)
 
@@ -10,7 +8,7 @@
 
 Support for many hosting [providers and tools](https://www.terraform.io/docs/providers/index.html).
 
-### Helm
+## Helm
 
 [Github](https://github.com/helm/charts)
 
@@ -19,7 +17,7 @@ Support for many hosting [providers and tools](https://www.terraform.io/docs/pro
 A catalogue of "charts", which are recipes for setting up applications in kubernetes.
 
 
-### bitnami
+## bitnami
 
 [Homepage](https://bitnami.com/)
 
@@ -27,22 +25,3 @@ A catalogue of "charts", which are recipes for setting up applications in kubern
 
 Pre-packaged and supported docker containers for a variety of common software.
 
-## Hosting Providers
-
-### Hetzner
-
-[Homepage](https://hetzner.de)
-
-Cloud and dedicated servers with datacenters in Germany and Finland.
-
-### vultr
-
-[Homepage](https://vultr.com)
-
-Cloud servers with SSDs with world wide data centers.
-
-### Exoscale
-
-[Homepage](https://exoscale.com)
-
-Cloud servers in Switzerland.

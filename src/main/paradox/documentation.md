@@ -4,7 +4,7 @@
 
 [Homepage](https://developer.lightbend.com/docs/paradox/latest) | [Github](https://github.com/lightbend/paradox/)
 
-Markdown-based software documentation tool. Most easily used from sbt.
+Markdown-based software documentation tool. Most easily used from sbt. (Also used for this site)
 
 ### Paradox Material Theme
 

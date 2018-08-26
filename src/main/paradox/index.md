@@ -10,7 +10,7 @@ A collection of computing resources and learnings
  * [log](log.md)
  * [Scala](scala.md)
  * [JVM](jvm.md)
- * [Hosting/Provisioning/Containers](hosting.md)
+ * [Hosting/Provisioning/Containers](hosting/index.md)
  * [Machine Learning](ml.md)
  * [Documentation Tools](documentation.md)
 
