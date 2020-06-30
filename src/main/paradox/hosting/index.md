@@ -1,6 +1,6 @@
 # Hosting
 
-@toc { depth=0 }
+@@toc { depth=0 }
 
 @@@index
 
