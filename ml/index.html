@@ -20,7 +20,7 @@
 
 <meta name="description" content="knowledge-base">
 <link rel="shortcut icon" href="../assets/images/favicon.png">
-<title>Scala Compilation Speed · @jrudolphs Knowledge Base</title>
+<title>Machine Learning · @jrudolphs Knowledge Base</title>
 <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
 <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
 <meta name="theme-color" content="#7cb342" />
@@ -60,7 +60,7 @@ data-md-color-accent="amber"
 @jrudolphs Knowledge Base
 </span>
 <span class="md-header-nav__topic">
-Scala Compilation Speed
+Machine Learning
 </span>
 </div>
 </div>
@@ -142,7 +142,7 @@ jrudolph/knowledge-base
   <li><a href="../scala/index.html" class="page">Scala</a>
   <ul>
     <li><a href="../scala/code-browsing.html" class="page">Discover Scala Code</a></li>
-    <li><a href="../scala/compilation-speed.html" class="active page">Scala Compilation Speed</a></li>
+    <li><a href="../scala/compilation-speed.html" class="page">Scala Compilation Speed</a></li>
     <li><a href="../scala/various.html" class="page">Various</a></li>
   </ul></li>
   <li><a href="../jvm.html" class="page">JVM</a></li>
@@ -154,7 +154,7 @@ jrudolph/knowledge-base
     <li><a href="../hosting/cloud-storage.html" class="page">Cloud Storage</a></li>
     <li><a href="../hosting/cloud-batch-jobs.html" class="page">Cloud Batch Jobs</a></li>
   </ul></li>
-  <li><a href="../ml/index.html" class="page">Machine Learning</a>
+  <li><a href="../ml/index.html" class="active page">Machine Learning</a>
   <ul>
     <li><a href="../ml/face-recognition.html" class="page">Face Recognition</a></li>
   </ul></li>
@@ -162,15 +162,6 @@ jrudolph/knowledge-base
   <li><a href="../low-level.html" class="page">Low-Level Programming</a></li>
 </ul>
 <nav class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">Table of contents</label>
-<ul>
-  <li><a href="../scala/compilation-speed.html#scala-compilation-speed" class="header">Scala Compilation Speed</a>
-  <ul>
-    <li><a href="../scala/compilation-speed.html#potential-culprits-for-slow-compile-times" class="header">Potential culprits for slow compile times</a></li>
-    <li><a href="../scala/compilation-speed.html#other-scala-compilers-with-a-focus-on-speed" class="header">Other Scala compilers with a focus on speed</a></li>
-    <li><a href="../scala/compilation-speed.html#tools" class="header">Tools</a></li>
-  </ul></li>
-</ul>
 </nav>
 
 </nav>
@@ -184,59 +175,18 @@ jrudolph/knowledge-base
 </div>
 </div>
 </div>
-<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-<div class="md-sidebar__scrollwrap">
-<div class="md-sidebar__inner">
-<nav class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">Table of contents</label>
-<ul>
-  <li><a href="../scala/compilation-speed.html#scala-compilation-speed" class="header">Scala Compilation Speed</a>
-  <ul>
-    <li><a href="../scala/compilation-speed.html#potential-culprits-for-slow-compile-times" class="header">Potential culprits for slow compile times</a></li>
-    <li><a href="../scala/compilation-speed.html#other-scala-compilers-with-a-focus-on-speed" class="header">Other Scala compilers with a focus on speed</a></li>
-    <li><a href="../scala/compilation-speed.html#tools" class="header">Tools</a></li>
-  </ul></li>
-</ul>
-</nav>
-
-</div>
-</div>
-</div>
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <div class="md-content__searchable">
-<h1><a href="#scala-compilation-speed" name="scala-compilation-speed" class="anchor"><span class="anchor-link"></span></a>Scala Compilation Speed</h1>
-<p>Scala has been somewhat notorious for long compile times. This has improved a lot over the years. Compared to other high-level language compilers, it&rsquo;s probably not too bad (though the usual comparison with Java hurts).</p>
-<p>Scala has a working incremental compiler, so when used from sbt (or other build systems), recompilation is not a big issue in most cases.</p>
-<h2><a href="#potential-culprits-for-slow-compile-times" name="potential-culprits-for-slow-compile-times" class="anchor"><span class="anchor-link"></span></a>Potential culprits for slow compile times</h2>
-<p>In user code (in no particular order):</p>
+<h1><a href="#machine-learning" name="machine-learning" class="anchor"><span class="anchor-link"></span></a>Machine Learning</h1>
+<div class="toc ">
 <ul>
-  <li>Heavy use of implicits</li>
-  <li>Type inference (adding explicit types to public members can help a lot)</li>
-  <li>Macros (can disturb incremental compilation when macros are defined in an internal dependency and that changes)</li>
-  <li>Big Modules (if you avoid circular dependencies between files you can often restructure code into more modules to  help with parallelism)</li>
-  <li>Mixed Mode projects containing Java and Scala files (at least that&rsquo;s what I observed in akka-http that sbt cannot infer  well enough what to recompile and incremental compilation is slower than a full recompile)</li>
-</ul>
-<p>In scalac&rsquo;s compiler architecture:</p>
-<ul>
-  <li>Mostly single-threaded execution (outline compilation might be a remedy in the future)</li>
-</ul>
-<h2><a href="#other-scala-compilers-with-a-focus-on-speed" name="other-scala-compilers-with-a-focus-on-speed" class="anchor"><span class="anchor-link"></span></a>Other Scala compilers with a focus on speed</h2>
-<ul>
-  <li><a href="https://www.triplequote.com/hydra/">triplequote hydra</a> - a commercial parallel Scala compiler implementation</li>
-  <li><a href="https://github.com/twitter/rsc">twitter rsc</a> - &ldquo;Reasonable Scala compiler (also known as Rsc) is an experimental Scala compiler focused on compilation speed.&rdquo;</li>
-  <li><a href="https://github.com/gkossakowski/kentuckymule">gkossakowski&rsquo;s kentucky mule</a> - &ldquo;an exploration of an alternative architecture for Scala compiler design (specifically typechecker) with a focus on speed&rdquo;</li>
-  <li><a href="http://dotty.epfl.ch/">dotty</a> - The next-generation compiler for Scala 3 - a simpler type-system and a new compiler architecture  may or may not bring performance improvements (haven&rsquo;t seen benchmarks)</li>
-</ul>
-<h2><a href="#tools" name="tools" class="anchor"><span class="anchor-link"></span></a>Tools</h2>
-<ul>
-  <li><a href="https://scalacenter.github.io/scalac-profiling/">scalac-profiling</a> - &ldquo;aims at providing the tools to understand and profile your Scala projects&rdquo;</li>
-  <li><a href="https://scalacenter.github.io/scalafix/docs/rules/ExplicitResultTypes.html">scalafix ExplicitResultTypes</a> refactoring - explicit result type will  help compilation speed already now but it&rsquo;s also mandatory for outline compilation (when that is available)</li>
-  <li><a href="https://scalacenter.github.io/bloop/">bloop</a> - &ldquo;One toolchain, one build server, one developer experience&rdquo;</li>
+  <li><a href="../ml/face-recognition.html" class="page">Face Recognition</a></li>
 </ul>
 </div>
+</div>
 <div>
-<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/scala/compilation-speed.md" title="Edit this page" class="md-source-file md-edit">
+<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/ml/index.md" title="Edit this page" class="md-source-file md-edit">
 Edit this page
 </a>
 </div>
@@ -252,7 +202,7 @@ Edit this page
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a href="../scala/code-browsing.html" title="Discover Scala Code" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<a href="../hosting/cloud-batch-jobs.html" title="Cloud Batch Jobs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
 <div class="md-flex__cell md-flex__cell--shrink">
 <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
 </div>
@@ -261,17 +211,17 @@ Edit this page
 <span class="md-footer-nav__direction">
 Previous
 </span>
-Discover Scala Code
+Cloud Batch Jobs
 </span>
 </div>
 </a>
-<a href="../scala/various.html" title="Various" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<a href="../ml/face-recognition.html" title="Face Recognition" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
 Next
 </span>
-Various
+Face Recognition
 </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">
