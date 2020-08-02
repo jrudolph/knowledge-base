@@ -7,7 +7,7 @@ A collection of computing resources and learnings
 
 @@@ index
 
- * [Scala](scala.md)
+ * [Scala](scala/index.md)
  * [JVM](jvm.md)
  * [Hosting/Provisioning/Containers](hosting/index.md)
  * [Machine Learning](ml.md)
