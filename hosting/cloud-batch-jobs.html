@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="knowledge-base">
+<meta name="generator" content="Paradox, paradox-material-theme=0.6.0, mkdocs-material=3.0.3">
+
+<meta name="lang:clipboard.copy" content="Copy to clipboard">
+<meta name="lang:clipboard.copied" content="Copied to clipboard">
+<meta name="lang:search.language" content="">
+<meta name="lang:search.pipeline.stopwords" content="true">
+<meta name="lang:search.pipeline.trimmer" content="true">
+<meta name="lang:search.result.none" content="No matching documents">
+<meta name="lang:search.result.one" content="1 matching document">
+<meta name="lang:search.result.other" content="# matching documents">
+<meta name="lang:search.tokenizer" content="[\s\-]+">
+
+
+<meta name="description" content="knowledge-base">
+<link rel="shortcut icon" href="../assets/images/favicon.png">
+<title>Cloud Batch Jobs · @jrudolphs Knowledge Base</title>
+<link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+<link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+<meta name="theme-color" content="#7cb342" />
+<link rel="stylesheet" href="../lib/material__tabs/dist/mdc.tabs.min.css">
+<link rel="stylesheet" href="../lib/prettify/prettify.css">
+<script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+<style>
+body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}
+code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}
+</style>
+<link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+<link rel="stylesheet" href="../assets/fonts/material-icons.css">
+<link rel="stylesheet" href="../assets/stylesheets/paradox-material-theme.css">
+</head>
+<body
+data-md-color-primary="light-green"
+data-md-color-accent="amber"
+>
+<input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+<input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+<label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+<header class="md-header" data-md-component="header">
+<nav class="md-header-nav md-grid">
+<div class="md-flex">
+<div class="md-flex__cell md-flex__cell--shrink">
+<a href="../index.html" title="@jrudolphs Knowledge Base" class="md-header-nav__button md-logo">
+<i class="md-icon">info</i>
+</a>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch">
+<div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
+@jrudolphs Knowledge Base
+</span>
+<span class="md-header-nav__topic">
+Cloud Batch Jobs
+</span>
+</div>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+<label class="md-icon md-search__icon" for="__search"></label>
+<button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">&#xE5CD;</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix>
+<div class="md-search-result" data-md-component="result">
+<div class="md-search-result__meta">
+Type to start searching
+</div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<div class="md-header-nav__source">
+<a href="https://github.com/jrudolph/knowledge-base"
+title="Go to repository"
+class="md-source"
+data-md-source="github">
+<div class="md-source__icon">
+<i class="fa fa-github"></i>
+</div>
+<div class="md-source__repository">
+jrudolph/knowledge-base
+</div>
+</a>
+
+</div>
+</div>
+</div>
+</nav>
+</header>
+
+<div class="md-container">
+<main class="md-main">
+<div class="md-main__inner md-grid" data-md-component="container">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--primary" data-md-level="0" style="visibility: hidden">
+<label class="md-nav__title md-nav__title--site" for="drawer">
+<a href="../index.html" title="@jrudolphs Knowledge Base" class="md-nav__button md-logo">
+<span class="md-nav__button md-logo">
+<i class="md-icon">info</i>
+</a>
+<a href="../index.html" title="@jrudolphs Knowledge Base">
+@jrudolphs Knowledge Base
+</a>
+</label>
+<div class="md-nav__source">
+<a href="https://github.com/jrudolph/knowledge-base"
+title="Go to repository"
+class="md-source"
+data-md-source="github">
+<div class="md-source__icon">
+<i class="fa fa-github"></i>
+</div>
+<div class="md-source__repository">
+jrudolph/knowledge-base
+</div>
+</a>
+
+</div>
+<ul>
+  <li><a href="../scala/index.html" class="page">Scala</a>
+  <ul>
+    <li><a href="../scala/code-browsing.html" class="page">Discover Scala Code</a></li>
+    <li><a href="../scala/compilation-speed.html" class="page">Scala Compilation Speed</a></li>
+    <li><a href="../scala/various.html" class="page">Various</a></li>
+  </ul></li>
+  <li><a href="../jvm.html" class="page">JVM</a></li>
+  <li><a href="../hosting/index.html" class="page">Hosting</a>
+  <ul>
+    <li><a href="../hosting/providers.html" class="page">Hosting Providers</a></li>
+    <li><a href="../hosting/provisioning.html" class="page">Provisioning</a></li>
+    <li><a href="../hosting/kubernetes.html" class="page">Kubernetes Tools</a></li>
+    <li><a href="../hosting/cloud-storage.html" class="page">Cloud Storage</a></li>
+    <li><a href="../hosting/cloud-batch-jobs.html" class="active page">Cloud Batch Jobs</a></li>
+  </ul></li>
+  <li><a href="../ml.html" class="page">Machine Learning</a></li>
+  <li><a href="../documentation.html" class="page">Documentation Tools</a></li>
+  <li><a href="../low-level.html" class="page">Low-Level Programming</a></li>
+</ul>
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../hosting/cloud-batch-jobs.html#cloud-batch-jobs" class="header">Cloud Batch Jobs</a>
+  <ul>
+    <li><a href="../hosting/cloud-batch-jobs.html#aws-fargate" class="header">AWS fargate</a></li>
+    <li><a href="../hosting/cloud-batch-jobs.html#iron-io-ironworker" class="header">iron.io IronWorker</a></li>
+    <li><a href="../hosting/cloud-batch-jobs.html#google-cloud-run" class="header">Google Cloud Run</a></li>
+    <li><a href="../hosting/cloud-batch-jobs.html#azure-equivalent" class="header">Azure Equivalent</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</nav>
+<ul style="display: none">
+<li class="md-nav__item md-version" id="project.version">
+<label class="md-nav__link" for="__version">
+<i class="md-icon" title="Version">label_outline</i> 0.1.0*
+</label>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">Table of contents</label>
+<ul>
+  <li><a href="../hosting/cloud-batch-jobs.html#cloud-batch-jobs" class="header">Cloud Batch Jobs</a>
+  <ul>
+    <li><a href="../hosting/cloud-batch-jobs.html#aws-fargate" class="header">AWS fargate</a></li>
+    <li><a href="../hosting/cloud-batch-jobs.html#iron-io-ironworker" class="header">iron.io IronWorker</a></li>
+    <li><a href="../hosting/cloud-batch-jobs.html#google-cloud-run" class="header">Google Cloud Run</a></li>
+    <li><a href="../hosting/cloud-batch-jobs.html#azure-equivalent" class="header">Azure Equivalent</a></li>
+  </ul></li>
+</ul>
+</nav>
+
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<div class="md-content__searchable">
+<h1><a href="#cloud-batch-jobs" name="cloud-batch-jobs" class="anchor"><span class="anchor-link"></span></a>Cloud Batch Jobs</h1>
+<p>Sometimes you just need more compute resources to get some jobs done and just need the compute power to get the job done. For these cases, it would be nice if there would be some cloud infrastructure to easily offload and run those tasks.</p>
+<p>Batch jobs are usually stateless, compute-heavy and often computed on some payload or input file.</p>
+<p>Example batch jobs:</p>
+<ul>
+  <li>media files analysis (e.g. calculating fingerprints to find similar images in your photo collection)</li>
+  <li>transcoding of media files</li>
+  <li>regular data analysis based e.g. on big CSV files</li>
+  <li>machine learning tasks</li>
+  <li>any kind cron-job (though they are often not CPU-bound so you can get those usually done)</li>
+</ul>
+<p>Often batch jobs are structured like this:</p>
+<ul>
+  <li>type of batch job (&ldquo;extract video key frames&rdquo;, &ldquo;downsize image&rdquo;)</li>
+  <li>parameters of the batch job (&ldquo;target image size&rdquo;, &ldquo;scaling algorithm&rdquo;)</li>
+  <li>parameters of the deployment (required amount of memory and CPU / GPU)</li>
+  <li>payload (e.g. file hash / location)</li>
+  <li>output file hash / location</li>
+</ul>
+<p>Functionality of batch jobs would be represented by a docker image. Input data would often be most usefully represented as an identifier like a URI or a hash if data is content-addressable.</p>
+<p>Potential features:</p>
+<ul>
+  <li>automatic provisioning of resources - no machine setup required, just an API to deploy a load</li>
+  <li>autoscaling - you define resource limits but spinning up nodes etc based on load is automatic</li>
+  <li>automatic data handling - often several jobs need to be run on the same data or output data is to be processed  further in another step, for that use case, data should be kept next to the compute resources, e.g. in form of  a content-addressable cache</li>
+  <li>data encryption - data should be encrypted in-flight and at rest</li>
+  <li>log handling - logs per job should be accessible</li>
+</ul>
+<p>A batch job often also accesses a DB for input data, these kind of jobs need access to internal infrastructure and also often offload processing load to the DB so they are not easily moved into the cloud if other part of the infrastructure is not already in the cloud as well.</p>
+<p>The current term for these kinds of services seems to be &ldquo;serverless container platform&rdquo; in its generic form.</p>
+<p>Following are some current option. Docker-based deployment and autoscaling should work fine. Currently, data management is an aspect that the user has to handle on their own, i.e. a batch job needs to download the payload and upload the result caring for aspects as locality and caching, and encryption themselves.</p>
+<h2><a href="#aws-fargate" name="aws-fargate" class="anchor"><span class="anchor-link"></span></a>AWS fargate</h2>
+<p><a href="https://aws.amazon.com/fargate/">Homepage</a></p>
+<p>From the <a href="https://aws.amazon.com/fargate/faqs/?nc=sn&loc=4">FAQ</a>:</p>
+<blockquote>
+  <p>Q: What use cases does AWS Fargate support?</p>
+  <p>AWS Fargate supports all of the common container use cases, for example microservices architecture applications, batch processing, machine learning applications, and migrating on premise applications to the cloud.</p>
+</blockquote>
+<h2><a href="#iron-io-ironworker" name="iron-io-ironworker" class="anchor"><span class="anchor-link"></span></a>iron.io IronWorker</h2>
+<p><a href="https://dev.iron.io/worker/getting_started/">Homepage</a></p>
+<h2><a href="#google-cloud-run" name="google-cloud-run" class="anchor"><span class="anchor-link"></span></a>Google Cloud Run</h2>
+<p><a href="https://cloud.google.com/run">Homepage</a></p>
+<h2><a href="#azure-equivalent" name="azure-equivalent" class="anchor"><span class="anchor-link"></span></a>Azure Equivalent</h2>
+<p>To-be-researched</p>
+</div>
+<div>
+<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/hosting/cloud-batch-jobs.md" title="Edit this page" class="md-source-file md-edit">
+Edit this page
+</a>
+</div>
+<div class="print-only">
+<span class="md-source-file md-version">
+0.1.0*
+</span>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-nav">
+<nav class="md-footer-nav__inner md-grid">
+<a href="../hosting/cloud-storage.html" title="Cloud Storage" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Previous
+</span>
+Cloud Storage
+</span>
+</div>
+</a>
+<a href="../ml.html" title="Machine Learning" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Next
+</span>
+Machine Learning
+</span>
+</div>
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+</div>
+</a>
+</nav>
+</div>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+Copyleft © Johannes Rudolph
+</div>
+Powered by
+<a href="https://github.com/lightbend/paradox">Paradox</a>
+and
+<a href="https://jonas.github.io/paradox-material-theme/">Paradox Material Theme</a>
+
+</div>
+<div class="md-footer-social">
+<a href="https://github.com/jrudolph" class="md-footer-social__link fa fa-github"></a><a href="https://twitter.com/virtualvoid" class="md-footer-social__link fa fa-twitter"></a>
+</div>
+
+</div>
+</div>
+</footer>
+
+</div>
+<script src="../assets/javascripts/application.583bbe55.js"></script>
+<script src="../assets/javascripts/paradox-material-theme.js"></script>
+<script>app.initialize({version:"0.17",url:{base:"../."}})</script>
+<script type="text/javascript" src="../lib/prettify/prettify.js"></script>
+<script type="text/javascript" src="../lib/prettify/lang-scala.js"></script>
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function(event) {
+window.prettyPrint && prettyPrint();
+});
+</script>
+</body>
+</html>

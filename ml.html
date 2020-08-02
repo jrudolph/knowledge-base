@@ -20,7 +20,7 @@
 
 <meta name="description" content="knowledge-base">
 <link rel="shortcut icon" href="assets/images/favicon.png">
-<title>@jrudolphs Knowledge Base</title>
+<title>Machine Learning · @jrudolphs Knowledge Base</title>
 <link rel="stylesheet" href="assets/stylesheets/application.451f80e5.css">
 <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
 <meta name="theme-color" content="#7cb342" />
@@ -56,7 +56,12 @@ data-md-color-accent="amber"
 </div>
 <div class="md-flex__cell md-flex__cell--stretch">
 <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
 @jrudolphs Knowledge Base
+</span>
+<span class="md-header-nav__topic">
+Machine Learning
+</span>
 </div>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">
@@ -149,16 +154,16 @@ jrudolph/knowledge-base
     <li><a href="hosting/cloud-storage.html" class="page">Cloud Storage</a></li>
     <li><a href="hosting/cloud-batch-jobs.html" class="page">Cloud Batch Jobs</a></li>
   </ul></li>
-  <li><a href="ml.html" class="page">Machine Learning</a></li>
+  <li><a href="ml.html" class="active page">Machine Learning</a></li>
   <li><a href="documentation.html" class="page">Documentation Tools</a></li>
   <li><a href="low-level.html" class="page">Low-Level Programming</a></li>
 </ul>
 <nav class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul>
-  <li><a href="index.html#jrudolphs-knowledge-base" class="header">@jrudolph&rsquo;s Knowledge Base</a>
+  <li><a href="ml.html#machine-learning" class="header">Machine Learning</a>
   <ul>
-    <li><a href="index.html#whats-this-" class="header">What&rsquo;s This?</a></li>
+    <li><a href="ml.html#face-recognition" class="header">Face Recognition</a></li>
   </ul></li>
 </ul>
 </nav>
@@ -180,9 +185,9 @@ jrudolph/knowledge-base
 <nav class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul>
-  <li><a href="index.html#jrudolphs-knowledge-base" class="header">@jrudolph&rsquo;s Knowledge Base</a>
+  <li><a href="ml.html#machine-learning" class="header">Machine Learning</a>
   <ul>
-    <li><a href="index.html#whats-this-" class="header">What&rsquo;s This?</a></li>
+    <li><a href="ml.html#face-recognition" class="header">Face Recognition</a></li>
   </ul></li>
 </ul>
 </nav>
@@ -193,23 +198,20 @@ jrudolph/knowledge-base
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <div class="md-content__searchable">
-<h1><a href="#jrudolphs-knowledge-base" name="jrudolphs-knowledge-base" class="anchor"><span class="anchor-link"></span></a>@jrudolph&rsquo;s Knowledge Base</h1>
-<h2><a href="#whats-this-" name="whats-this-" class="anchor"><span class="anchor-link"></span></a>What&rsquo;s This?</h2>
-<p>A collection of computing resources and personal learnings collected by <a href="https://virtual-void.net">me</a>. It&rsquo;s mostly a semi-structured way for me to keep links and insights.</p>
-<p>It&rsquo;s published and public mostly because that&rsquo;s easiest for my own needs but also because sometimes people find similar things useful.</p>
-<div class="toc ">
-<ul>
-  <li><a href="scala/index.html" class="page">Scala</a></li>
-  <li><a href="jvm.html" class="page">JVM</a></li>
-  <li><a href="hosting/index.html" class="page">Hosting</a></li>
-  <li><a href="ml.html" class="page">Machine Learning</a></li>
-  <li><a href="documentation.html" class="page">Documentation Tools</a></li>
-  <li><a href="low-level.html" class="page">Low-Level Programming</a></li>
-</ul>
-</div>
+<h1><a href="#machine-learning" name="machine-learning" class="anchor"><span class="anchor-link"></span></a>Machine Learning</h1>
+<h2><a href="#face-recognition" name="face-recognition" class="anchor"><span class="anchor-link"></span></a>Face Recognition</h2>
+<h3><a href="#face-recognition" name="face-recognition" class="anchor"><span class="anchor-link"></span></a>face_recognition</h3>
+<p><a href="https://github.com/ageitgey/face_recognition">Github</a></p>
+<p>Seems to be very popular (16000+ stars). Simple to use, just create a single folder with photos which show a single person. Then also point it to another folder with photos and it will detect and recognize persons in there.</p>
+<p>Command line usage has the problem that only giving a single reference photo might be worse than giving a corpus of reference images. (But that should be easy build on top of face_recognition/dlib) </p>
+<p>Turns out it is only a super simple (<a href="https://github.com/ageitgey/face_recognition/blob/master/face_recognition/api.py">200 lines</a>) python wrapper over <a href="http://dlib.net/">dlib</a>&rsquo;s &ldquo;state-of-the-art face recognition&rdquo; python API. dlib only has C++ and python APIs.</p>
+<h3><a href="#dlib" name="dlib" class="anchor"><span class="anchor-link"></span></a>dlib</h3>
+<p><a href="http://dlib.net/">Homepage</a> | <a href="https://github.com/davisking/dlib">Github</a></p>
+<p>C++ and python APIs for all kinds of mathematical and ML tasks.</p>
+<p>It seems no effort is made of providing a Java binding <a href="https://github.com/davisking/dlib/issues/681">any time soon</a>. Instead, the developers point to <a href="http://www.swig.org/">SWIG</a> for creating bindings semi-automatically (which means writing simple enough C++ code to be auto-converted into Java bindings).</p>
 </div>
 <div>
-<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/index.md" title="Edit this page" class="md-source-file md-edit">
+<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/ml.md" title="Edit this page" class="md-source-file md-edit">
 Edit this page
 </a>
 </div>
@@ -225,13 +227,26 @@ Edit this page
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a href="scala/index.html" title="Scala" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<a href="hosting/cloud-batch-jobs.html" title="Cloud Batch Jobs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Previous
+</span>
+Cloud Batch Jobs
+</span>
+</div>
+</a>
+<a href="documentation.html" title="Documentation Tools" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
 Next
 </span>
-Scala
+Documentation Tools
 </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">

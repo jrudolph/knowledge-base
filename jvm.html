@@ -20,7 +20,7 @@
 
 <meta name="description" content="knowledge-base">
 <link rel="shortcut icon" href="assets/images/favicon.png">
-<title>@jrudolphs Knowledge Base</title>
+<title>JVM · @jrudolphs Knowledge Base</title>
 <link rel="stylesheet" href="assets/stylesheets/application.451f80e5.css">
 <link rel="stylesheet" href="assets/stylesheets/application-palette.22915126.css">
 <meta name="theme-color" content="#7cb342" />
@@ -56,7 +56,12 @@ data-md-color-accent="amber"
 </div>
 <div class="md-flex__cell md-flex__cell--stretch">
 <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+<span class="md-header-nav__topic">
 @jrudolphs Knowledge Base
+</span>
+<span class="md-header-nav__topic">
+JVM
+</span>
 </div>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">
@@ -140,7 +145,7 @@ jrudolph/knowledge-base
     <li><a href="scala/compilation-speed.html" class="page">Scala Compilation Speed</a></li>
     <li><a href="scala/various.html" class="page">Various</a></li>
   </ul></li>
-  <li><a href="jvm.html" class="page">JVM</a></li>
+  <li><a href="jvm.html" class="active page">JVM</a></li>
   <li><a href="hosting/index.html" class="page">Hosting</a>
   <ul>
     <li><a href="hosting/providers.html" class="page">Hosting Providers</a></li>
@@ -156,9 +161,9 @@ jrudolph/knowledge-base
 <nav class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul>
-  <li><a href="index.html#jrudolphs-knowledge-base" class="header">@jrudolph&rsquo;s Knowledge Base</a>
+  <li><a href="jvm.html#jvm" class="header">JVM</a>
   <ul>
-    <li><a href="index.html#whats-this-" class="header">What&rsquo;s This?</a></li>
+    <li><a href="jvm.html#project-loom" class="header">Project Loom</a></li>
   </ul></li>
 </ul>
 </nav>
@@ -180,9 +185,9 @@ jrudolph/knowledge-base
 <nav class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul>
-  <li><a href="index.html#jrudolphs-knowledge-base" class="header">@jrudolph&rsquo;s Knowledge Base</a>
+  <li><a href="jvm.html#jvm" class="header">JVM</a>
   <ul>
-    <li><a href="index.html#whats-this-" class="header">What&rsquo;s This?</a></li>
+    <li><a href="jvm.html#project-loom" class="header">Project Loom</a></li>
   </ul></li>
 </ul>
 </nav>
@@ -193,23 +198,17 @@ jrudolph/knowledge-base
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <div class="md-content__searchable">
-<h1><a href="#jrudolphs-knowledge-base" name="jrudolphs-knowledge-base" class="anchor"><span class="anchor-link"></span></a>@jrudolph&rsquo;s Knowledge Base</h1>
-<h2><a href="#whats-this-" name="whats-this-" class="anchor"><span class="anchor-link"></span></a>What&rsquo;s This?</h2>
-<p>A collection of computing resources and personal learnings collected by <a href="https://virtual-void.net">me</a>. It&rsquo;s mostly a semi-structured way for me to keep links and insights.</p>
-<p>It&rsquo;s published and public mostly because that&rsquo;s easiest for my own needs but also because sometimes people find similar things useful.</p>
-<div class="toc ">
+<h1><a href="#jvm" name="jvm" class="anchor"><span class="anchor-link"></span></a>JVM</h1>
+<h2><a href="#project-loom" name="project-loom" class="anchor"><span class="anchor-link"></span></a>Project Loom</h2>
+<p>Fibers and continuations on the JVM</p>
+<p><a href="http://openjdk.java.net/projects/loom/">Homepage</a> | <a href="https://wiki.openjdk.java.net/display/loom/Main">Wiki</a></p>
+<h3><a href="#presentations" name="presentations" class="anchor"><span class="anchor-link"></span></a>Presentations</h3>
 <ul>
-  <li><a href="scala/index.html" class="page">Scala</a></li>
-  <li><a href="jvm.html" class="page">JVM</a></li>
-  <li><a href="hosting/index.html" class="page">Hosting</a></li>
-  <li><a href="ml.html" class="page">Machine Learning</a></li>
-  <li><a href="documentation.html" class="page">Documentation Tools</a></li>
-  <li><a href="low-level.html" class="page">Low-Level Programming</a></li>
+  <li><a href="https://www.youtube.com/watch?v=J31o0ZMQEnI&t=0s&index=4&list=PLX8CzqL3ArzVnxC6PYxMlngEMv3W1pIkn">Project Loom with Ron Pressler and Alan Bateman (youtube)</a>  <img src="img/loom-footprint-comparison.png" alt="Loom Footprint Comparison" /></li>
 </ul>
 </div>
-</div>
 <div>
-<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/index.md" title="Edit this page" class="md-source-file md-edit">
+<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/jvm.md" title="Edit this page" class="md-source-file md-edit">
 Edit this page
 </a>
 </div>
@@ -225,13 +224,26 @@ Edit this page
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a href="scala/index.html" title="Scala" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<a href="scala/various.html" title="Various" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<div class="md-flex__cell md-flex__cell--shrink">
+<i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+</div>
+<div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+<span class="md-flex__ellipsis">
+<span class="md-footer-nav__direction">
+Previous
+</span>
+Various
+</span>
+</div>
+</a>
+<a href="hosting/index.html" title="Hosting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
 Next
 </span>
-Scala
+Hosting
 </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">
