@@ -25,3 +25,16 @@ A catalogue of "charts", which are recipes for setting up applications in kubern
 
 Pre-packaged and supported docker containers for a variety of common software.
 
+## hobby-kube
+
+[Homepage](https://github.com/hobby-kube/guide)
+
+A guide to provisioning a kubernetes cluster using terraform for a big variety of hosting platforms.
+
+
+## kubectl guide
+
+[Homepage](https://kubectl.docs.kubernetes.io)
+
+Superficially, just the reference documentation for kubectl but beyond that shares lots of wisdom of
+how to structure kubernetes setups (using `kustomization.yaml`).

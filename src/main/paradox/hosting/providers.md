@@ -1,28 +1,41 @@
 # Hosting Providers
 
-## Hetzner
+## Benchmarks
+
+[www.webhosterwissen.de](https://www.webhosterwissen.de/vserver/)
+
+## Providers
+
+### Hetzner
 
 [Homepage](https://hetzner.de)
 
 Cloud and dedicated servers with datacenters in Germany and Finland.
 
-## vultr
+### Netcup
+
+[Homepage](https://netcup.de)
+
+German provider with nice price/performance rating. Offers VPS where the CPUs are shared with hourly billing (cloud style)
+and root servers which are virtualized with monthly billing and dedicated CPU resources.
+
+### vultr
 
 [Homepage](https://vultr.com)
 
 Cloud servers with SSDs with world wide data centers.
 
-## Exoscale
+### Exoscale
 
 [Homepage](https://exoscale.com)
 
 Cloud servers in Switzerland.
 
-## TransIp
+### TransIp
 
 [Homepage](https://www.transip.eu)
 
-## BuyVM
+### BuyVM
 
 [Homepage](https://buyvm.net)
 
