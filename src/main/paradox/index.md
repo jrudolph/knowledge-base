@@ -15,7 +15,7 @@ things useful.
  * [Scala](scala/index.md)
  * [JVM](jvm.md)
  * [Hosting/Provisioning/Containers](hosting/index.md)
- * [Machine Learning](ml.md)
+ * [Machine Learning](ml/index.md)
  * [Documentation Tools](documentation.md)
  * [Low Level Programming](low-level.md)
 
