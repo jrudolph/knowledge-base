@@ -8,5 +8,6 @@
  * [Provisioning](provisioning.md)
  * [Kubernetes](kubernetes.md)
  * [Cloud Storage](cloud-storage.md)
+ * [Cloud Batch Jobs](cloud-batch-jobs.md)
 
 @@@
