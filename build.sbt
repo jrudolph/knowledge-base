@@ -9,16 +9,16 @@ scalaVersion := scalaV
 
 // docs
 
-enablePlugins(ParadoxMaterialThemePlugin)
+enablePlugins(ParadoxMaterialThemePlugin, GhpagesPlugin)
 
 paradoxMaterialTheme in Compile := {
   ParadoxMaterialTheme()
     // choose from https://jonas.github.io/paradox-material-theme/getting-started.html#changing-the-color-palette
     .withColor("light-green", "amber")
     // choose from https://jonas.github.io/paradox-material-theme/getting-started.html#adding-a-logo
-    .withLogoIcon("cloud")
+    .withLogoIcon("info")
     .withCopyright("Copyleft © Johannes Rudolph")
-    .withRepository(uri("https://github.com/jrudolph/xyz"))
+    .withRepository(uri("https://github.com/jrudolph/knowledge-base"))
     .withSocial(
       uri("https://github.com/jrudolph"),
       uri("https://twitter.com/virtualvoid")
@@ -28,3 +28,10 @@ paradoxMaterialTheme in Compile := {
 paradoxProperties ++= Map(
   "github.base_url" -> (paradoxMaterialTheme in Compile).value.properties.getOrElse("repo", "")
 )
+
+makeSite / includeFilter := "*.html" | "*.css" | "*.png" | "*.png" | "*.js" | "*.woff" | "*.woff2" | "*.ttf" | "CNAME"
+siteSourceDirectory := (Compile / paradox / target).value
+makeSite := makeSite.dependsOn(Compile / paradox).value
+ghpagesNoJekyll := true
+git.remoteRepo := "git@github.com:jrudolph/knowledge-base.git"
+//git.remoteRepo := "https://github.com/jrudolph/knowledge-base.git"
