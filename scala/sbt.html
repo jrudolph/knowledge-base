@@ -20,7 +20,7 @@
 
 <meta name="description" content="knowledge-base">
 <link rel="shortcut icon" href="../assets/images/favicon.png">
-<title>Kubernetes Tools · @jrudolphs Knowledge Base</title>
+<title>SBT Tricks · @jrudolphs Knowledge Base</title>
 <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
 <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
 <meta name="theme-color" content="#7cb342" />
@@ -60,7 +60,7 @@ data-md-color-accent="amber"
 @jrudolphs Knowledge Base
 </span>
 <span class="md-header-nav__topic">
-Kubernetes Tools
+SBT Tricks
 </span>
 </div>
 </div>
@@ -141,7 +141,7 @@ jrudolph/knowledge-base
 <ul>
   <li><a href="../scala/index.html" class="page">Scala</a>
   <ul>
-    <li><a href="../scala/sbt.html" class="page">SBT Tricks</a></li>
+    <li><a href="../scala/sbt.html" class="active page">SBT Tricks</a></li>
     <li><a href="../scala/code-browsing.html" class="page">Discover Scala Code</a></li>
     <li><a href="../scala/compilation-speed.html" class="page">Scala Compilation Speed</a></li>
     <li><a href="../scala/various.html" class="page">Various</a></li>
@@ -151,7 +151,7 @@ jrudolph/knowledge-base
   <ul>
     <li><a href="../hosting/providers.html" class="page">Hosting Providers</a></li>
     <li><a href="../hosting/provisioning.html" class="page">Provisioning</a></li>
-    <li><a href="../hosting/kubernetes.html" class="active page">Kubernetes Tools</a></li>
+    <li><a href="../hosting/kubernetes.html" class="page">Kubernetes Tools</a></li>
     <li><a href="../hosting/cloud-storage.html" class="page">Cloud Storage</a></li>
     <li><a href="../hosting/cloud-batch-jobs.html" class="page">Cloud Batch Jobs</a></li>
   </ul></li>
@@ -165,10 +165,9 @@ jrudolph/knowledge-base
 <nav class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul>
-  <li><a href="../hosting/kubernetes.html#kubernetes-tools" class="header">Kubernetes Tools</a>
+  <li><a href="../scala/sbt.html#sbt-tricks" class="header">SBT Tricks</a>
   <ul>
-    <li><a href="../hosting/kubernetes.html#network-driver" class="header">Network driver</a></li>
-    <li><a href="../hosting/kubernetes.html#storage" class="header">Storage</a></li>
+    <li><a href="../scala/sbt.html#dont-pusblish-docs-on-publishlocal" class="header">Don&rsquo;t pusblish docs on <code>publishLocal</code></a></li>
   </ul></li>
 </ul>
 </nav>
@@ -190,10 +189,9 @@ jrudolph/knowledge-base
 <nav class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul>
-  <li><a href="../hosting/kubernetes.html#kubernetes-tools" class="header">Kubernetes Tools</a>
+  <li><a href="../scala/sbt.html#sbt-tricks" class="header">SBT Tricks</a>
   <ul>
-    <li><a href="../hosting/kubernetes.html#network-driver" class="header">Network driver</a></li>
-    <li><a href="../hosting/kubernetes.html#storage" class="header">Storage</a></li>
+    <li><a href="../scala/sbt.html#dont-pusblish-docs-on-publishlocal" class="header">Don&rsquo;t pusblish docs on <code>publishLocal</code></a></li>
   </ul></li>
 </ul>
 </nav>
@@ -204,16 +202,16 @@ jrudolph/knowledge-base
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <div class="md-content__searchable">
-<h1><a href="#kubernetes-tools" name="kubernetes-tools" class="anchor"><span class="anchor-link"></span></a>Kubernetes Tools</h1>
-<h2><a href="#network-driver" name="network-driver" class="anchor"><span class="anchor-link"></span></a>Network driver</h2>
-<h3><a href="#calico" name="calico" class="anchor"><span class="anchor-link"></span></a>Calico</h3>
-<h2><a href="#storage" name="storage" class="anchor"><span class="anchor-link"></span></a>Storage</h2>
-<h3><a href="#rook" name="rook" class="anchor"><span class="anchor-link"></span></a>Rook</h3>
-<p><a href="https://rook.io">Homepage</a></p>
-<p>A &ldquo;cloud-native storage orchestrator&rdquo;. It can provide ceph-based storage directly from kubernetes node attached storage. </p>
+<h1><a href="#sbt-tricks" name="sbt-tricks" class="anchor"><span class="anchor-link"></span></a>SBT Tricks</h1>
+<h2><a href="#dont-pusblish-docs-on-publishlocal" name="dont-pusblish-docs-on-publishlocal" class="anchor"><span class="anchor-link"></span></a>Don&rsquo;t pusblish docs on <code>publishLocal</code></h2>
+<p>Often building docs is the slowest part of a <code>publishLocal</code> so it&rsquo;s recommended to turn it off if not needed.</p>
+<p><a href="https://github.com/sbt/sbt/issues/3537">sbt/sbt#3537</a> recommends to set</p>
+<pre><code>set publishArtifact in (Compile, packageDoc) in ThisBuild := false
+</code></pre>
+<p>temporarily to avoid building docs for publishing.</p>
 </div>
 <div>
-<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/hosting/kubernetes.md" title="Edit this page" class="md-source-file md-edit">
+<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/scala/sbt.md" title="Edit this page" class="md-source-file md-edit">
 Edit this page
 </a>
 </div>
@@ -229,7 +227,7 @@ Edit this page
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a href="../hosting/provisioning.html" title="Provisioning" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<a href="../scala/index.html" title="Scala" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
 <div class="md-flex__cell md-flex__cell--shrink">
 <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
 </div>
@@ -238,17 +236,17 @@ Edit this page
 <span class="md-footer-nav__direction">
 Previous
 </span>
-Provisioning
+Scala
 </span>
 </div>
 </a>
-<a href="../hosting/cloud-storage.html" title="Cloud Storage" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<a href="../scala/code-browsing.html" title="Discover Scala Code" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
 Next
 </span>
-Cloud Storage
+Discover Scala Code
 </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">
