@@ -13,7 +13,7 @@ things useful.
 @@@ index
 
  * [Scala](scala/index.md)
- * [JVM](jvm.md)
+ * [JVM](jvm/index.md)
  * [Hosting/Provisioning/Containers](hosting/index.md)
  * [Machine Learning](ml/index.md)
  * [Documentation Tools](documentation.md)
