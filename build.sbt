@@ -29,7 +29,7 @@ paradoxProperties ++= Map(
   "github.base_url" -> (paradoxMaterialTheme in Compile).value.properties.getOrElse("repo", "")
 )
 
-makeSite / includeFilter := "*.html" | "*.css" | "*.png" | "*.png" | "*.js" | "*.woff" | "*.woff2" | "*.ttf" | "CNAME"
+makeSite / includeFilter := "*.html" | "*.css" | "*.png" | "*.png" | "*.js" | "*.woff" | "*.woff2" | "*.ttf" | "CNAME" | "*.json"
 siteSourceDirectory := (Compile / paradox / target).value
 makeSite := makeSite.dependsOn(Compile / paradox).value
 ghpagesNoJekyll := true
