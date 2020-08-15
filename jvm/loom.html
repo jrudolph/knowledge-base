@@ -20,7 +20,7 @@
 
 <meta name="description" content="knowledge-base">
 <link rel="shortcut icon" href="../assets/images/favicon.png">
-<title>Cloud Batch Jobs · @jrudolphs Knowledge Base</title>
+<title>Project Loom · @jrudolphs Knowledge Base</title>
 <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
 <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
 <meta name="theme-color" content="#7cb342" />
@@ -60,7 +60,7 @@ data-md-color-accent="amber"
 @jrudolphs Knowledge Base
 </span>
 <span class="md-header-nav__topic">
-Cloud Batch Jobs
+Project Loom
 </span>
 </div>
 </div>
@@ -149,7 +149,7 @@ jrudolph/knowledge-base
   <li><a href="../jvm/index.html" class="page">JVM</a>
   <ul>
     <li><a href="../jvm/graal.html" class="page">Graal VM</a></li>
-    <li><a href="../jvm/loom.html" class="page">Project Loom</a></li>
+    <li><a href="../jvm/loom.html" class="active page">Project Loom</a></li>
   </ul></li>
   <li><a href="../hosting/index.html" class="page">Hosting</a>
   <ul>
@@ -157,7 +157,7 @@ jrudolph/knowledge-base
     <li><a href="../hosting/provisioning.html" class="page">Provisioning</a></li>
     <li><a href="../hosting/kubernetes.html" class="page">Kubernetes Tools</a></li>
     <li><a href="../hosting/cloud-storage.html" class="page">Cloud Storage</a></li>
-    <li><a href="../hosting/cloud-batch-jobs.html" class="active page">Cloud Batch Jobs</a></li>
+    <li><a href="../hosting/cloud-batch-jobs.html" class="page">Cloud Batch Jobs</a></li>
   </ul></li>
   <li><a href="../ml/index.html" class="page">Machine Learning</a>
   <ul>
@@ -169,12 +169,9 @@ jrudolph/knowledge-base
 <nav class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul>
-  <li><a href="../hosting/cloud-batch-jobs.html#cloud-batch-jobs" class="header">Cloud Batch Jobs</a>
+  <li><a href="../jvm/loom.html#project-loom" class="header">Project Loom</a>
   <ul>
-    <li><a href="../hosting/cloud-batch-jobs.html#aws-fargate" class="header">AWS fargate</a></li>
-    <li><a href="../hosting/cloud-batch-jobs.html#iron-io-ironworker" class="header">iron.io IronWorker</a></li>
-    <li><a href="../hosting/cloud-batch-jobs.html#google-cloud-run" class="header">Google Cloud Run</a></li>
-    <li><a href="../hosting/cloud-batch-jobs.html#azure-equivalent" class="header">Azure Equivalent</a></li>
+    <li><a href="../jvm/loom.html#presentations" class="header">Presentations</a></li>
   </ul></li>
 </ul>
 </nav>
@@ -196,12 +193,9 @@ jrudolph/knowledge-base
 <nav class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">Table of contents</label>
 <ul>
-  <li><a href="../hosting/cloud-batch-jobs.html#cloud-batch-jobs" class="header">Cloud Batch Jobs</a>
+  <li><a href="../jvm/loom.html#project-loom" class="header">Project Loom</a>
   <ul>
-    <li><a href="../hosting/cloud-batch-jobs.html#aws-fargate" class="header">AWS fargate</a></li>
-    <li><a href="../hosting/cloud-batch-jobs.html#iron-io-ironworker" class="header">iron.io IronWorker</a></li>
-    <li><a href="../hosting/cloud-batch-jobs.html#google-cloud-run" class="header">Google Cloud Run</a></li>
-    <li><a href="../hosting/cloud-batch-jobs.html#azure-equivalent" class="header">Azure Equivalent</a></li>
+    <li><a href="../jvm/loom.html#presentations" class="header">Presentations</a></li>
   </ul></li>
 </ul>
 </nav>
@@ -212,53 +206,16 @@ jrudolph/knowledge-base
 <div class="md-content">
 <article class="md-content__inner md-typeset">
 <div class="md-content__searchable">
-<h1><a href="#cloud-batch-jobs" name="cloud-batch-jobs" class="anchor"><span class="anchor-link"></span></a>Cloud Batch Jobs</h1>
-<p>Sometimes you just need more compute resources to get some jobs done and just need the compute power to get the job done. For these cases, it would be nice if there would be some cloud infrastructure to easily offload and run those tasks.</p>
-<p>Batch jobs are usually stateless, compute-heavy and often computed on some payload or input file.</p>
-<p>Example batch jobs:</p>
+<h1><a href="#project-loom" name="project-loom" class="anchor"><span class="anchor-link"></span></a>Project Loom</h1>
+<p>Fibers and continuations on the JVM</p>
+<p><a href="http://openjdk.java.net/projects/loom/">Homepage</a> | <a href="https://wiki.openjdk.java.net/display/loom/Main">Wiki</a></p>
+<h2><a href="#presentations" name="presentations" class="anchor"><span class="anchor-link"></span></a>Presentations</h2>
 <ul>
-  <li>media files analysis (e.g. calculating fingerprints to find similar images in your photo collection)</li>
-  <li>transcoding of media files</li>
-  <li>regular data analysis based e.g. on big CSV files</li>
-  <li>machine learning tasks</li>
-  <li>any kind cron-job (though they are often not CPU-bound so you can get those usually done)</li>
+  <li><a href="https://www.youtube.com/watch?v=J31o0ZMQEnI&t=0s&index=4&list=PLX8CzqL3ArzVnxC6PYxMlngEMv3W1pIkn">Project Loom with Ron Pressler and Alan Bateman (youtube)</a>  <img src="img/loom-footprint-comparison.png" alt="Loom Footprint Comparison" /></li>
 </ul>
-<p>Often batch jobs are structured like this:</p>
-<ul>
-  <li>type of batch job (&ldquo;extract video key frames&rdquo;, &ldquo;downsize image&rdquo;)</li>
-  <li>parameters of the batch job (&ldquo;target image size&rdquo;, &ldquo;scaling algorithm&rdquo;)</li>
-  <li>parameters of the deployment (required amount of memory and CPU / GPU)</li>
-  <li>payload (e.g. file hash / location)</li>
-  <li>output file hash / location</li>
-</ul>
-<p>Functionality of batch jobs would be represented by a docker image. Input data would often be most usefully represented as an identifier like a URI or a hash if data is content-addressable.</p>
-<p>Potential features:</p>
-<ul>
-  <li>automatic provisioning of resources - no machine setup required, just an API to deploy a load</li>
-  <li>autoscaling - you define resource limits but spinning up nodes etc based on load is automatic</li>
-  <li>automatic data handling - often several jobs need to be run on the same data or output data is to be processed  further in another step, for that use case, data should be kept next to the compute resources, e.g. in form of  a content-addressable cache</li>
-  <li>data encryption - data should be encrypted in-flight and at rest</li>
-  <li>log handling - logs per job should be accessible</li>
-</ul>
-<p>A batch job often also accesses a DB for input data, these kind of jobs need access to internal infrastructure and also often offload processing load to the DB so they are not easily moved into the cloud if other part of the infrastructure is not already in the cloud as well.</p>
-<p>The current term for these kinds of services seems to be &ldquo;serverless container platform&rdquo; in its generic form.</p>
-<p>Following are some current option. Docker-based deployment and autoscaling should work fine. Currently, data management is an aspect that the user has to handle on their own, i.e. a batch job needs to download the payload and upload the result caring for aspects as locality and caching, and encryption themselves.</p>
-<h2><a href="#aws-fargate" name="aws-fargate" class="anchor"><span class="anchor-link"></span></a>AWS fargate</h2>
-<p><a href="https://aws.amazon.com/fargate/">Homepage</a></p>
-<p>From the <a href="https://aws.amazon.com/fargate/faqs/?nc=sn&loc=4">FAQ</a>:</p>
-<blockquote>
-  <p>Q: What use cases does AWS Fargate support?</p>
-  <p>AWS Fargate supports all of the common container use cases, for example microservices architecture applications, batch processing, machine learning applications, and migrating on premise applications to the cloud.</p>
-</blockquote>
-<h2><a href="#iron-io-ironworker" name="iron-io-ironworker" class="anchor"><span class="anchor-link"></span></a>iron.io IronWorker</h2>
-<p><a href="https://dev.iron.io/worker/getting_started/">Homepage</a></p>
-<h2><a href="#google-cloud-run" name="google-cloud-run" class="anchor"><span class="anchor-link"></span></a>Google Cloud Run</h2>
-<p><a href="https://cloud.google.com/run">Homepage</a></p>
-<h2><a href="#azure-equivalent" name="azure-equivalent" class="anchor"><span class="anchor-link"></span></a>Azure Equivalent</h2>
-<p>To-be-researched</p>
 </div>
 <div>
-<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/hosting/cloud-batch-jobs.md" title="Edit this page" class="md-source-file md-edit">
+<a href="https://github.com/jrudolph/knowledge-base/tree/master/src/main/paradox/jvm/loom.md" title="Edit this page" class="md-source-file md-edit">
 Edit this page
 </a>
 </div>
@@ -274,7 +231,7 @@ Edit this page
 <footer class="md-footer">
 <div class="md-footer-nav">
 <nav class="md-footer-nav__inner md-grid">
-<a href="../hosting/cloud-storage.html" title="Cloud Storage" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+<a href="../jvm/graal.html" title="Graal VM" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
 <div class="md-flex__cell md-flex__cell--shrink">
 <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
 </div>
@@ -283,17 +240,17 @@ Edit this page
 <span class="md-footer-nav__direction">
 Previous
 </span>
-Cloud Storage
+Graal VM
 </span>
 </div>
 </a>
-<a href="../ml/index.html" title="Machine Learning" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+<a href="../hosting/index.html" title="Hosting" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
 <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
 <span class="md-flex__ellipsis">
 <span class="md-footer-nav__direction">
 Next
 </span>
-Machine Learning
+Hosting
 </span>
 </div>
 <div class="md-flex__cell md-flex__cell--shrink">
