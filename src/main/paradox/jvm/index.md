@@ -4,6 +4,7 @@
 
 @@@index
 
+ * [Graal](graal.md)
  * [Loom](loom.md)
 
 @@@
