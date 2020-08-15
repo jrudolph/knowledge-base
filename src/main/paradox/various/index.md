@@ -5,5 +5,6 @@
 @@@index
 
   * [Low Level Programming](low-level.md)
+  * [Terminal](terminal.md)
 
 @@@
