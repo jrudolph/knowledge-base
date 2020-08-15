@@ -209,13 +209,43 @@ jrudolph/knowledge-base
 <h1><a href="#graal-vm" name="graal-vm" class="anchor"><span class="anchor-link"></span></a>Graal VM</h1>
 <p><a href="https://www.graalvm.org/">Homepage</a> | <a href="https://www.graalvm.org/docs/">Documentation</a> | <a href="https://github.com/oracle/graal">Github</a></p>
 <h2><a href="#native-image" name="native-image" class="anchor"><span class="anchor-link"></span></a>Native Image</h2>
+<h3><a href="#scala-2-13-x-support" name="scala-2-13-x-support" class="anchor"><span class="anchor-link"></span></a>Scala 2.13.x support</h3>
+<p>See <a href="https://github.com/scala/bug/issues/11634">scala/bug#11634</a>, you will need a substitution for <code>scala.runtime.Statics</code>:</p>
+<pre class="prettyprint"><code class="language-java">import com.oracle.svm.core.annotate.Substitute;
+import com.oracle.svm.core.annotate.TargetClass;
+
+@TargetClass(className = &quot;scala.runtime.Statics&quot;)
+final class Target_scala_runtime_Statics {
+
+    @Substitute
+    public static void releaseFence() {
+        UnsafeUtils.UNSAFE.storeFence();
+    }
+}
+</code></pre>
+<pre class="prettyprint"><code class="language-java">import java.lang.reflect.Field;
+
+class UnsafeUtils {
+    static final sun.misc.Unsafe UNSAFE;
+
+    static {
+        try {
+            Field field = sun.misc.Unsafe.class.getDeclaredField(&quot;theUnsafe&quot;);
+            field.setAccessible(true);
+            UNSAFE = (sun.misc.Unsafe) field.get(null);
+        } catch (Throwable ex) {
+            throw new ExceptionInInitializerError(ex);
+        }
+    }
+}
+</code></pre>
 <h3><a href="#size-of-generated-image" name="size-of-generated-image" class="anchor"><span class="anchor-link"></span></a>Size of generated image</h3>
-<p>Currently not quite optimized it seems. See <a href="https://github.com/oracle/graal/issues/287">graal/issues#287</a> for ongoing discussion about that.</p>
+<p>Currently not quite optimized it seems. See <a href="https://github.com/oracle/graal/issues/287">oracle/graal#287</a> for ongoing discussion about that.</p>
 <h3><a href="#generating-heap-dumps-for-substrate-vm-at-runtime" name="generating-heap-dumps-for-substrate-vm-at-runtime" class="anchor"><span class="anchor-link"></span></a>Generating heap dumps for substrate VM at runtime</h3><div class="callout warning "><div class="callout-title">Warning</div>
 <p>Currently not possible for CE!</p></div>
 <p><a href="https://www.graalvm.org/docs/reference-manual/native_heapdump/">Documentation for EE</a></p>
 <h3><a href="#print-heap-histogram-from-inside-binary" name="print-heap-histogram-from-inside-binary" class="anchor"><span class="anchor-link"></span></a>Print heap histogram from inside binary</h3>
-<p>Similar to what <code>jmap -histo</code> would do. Would probably make sense to trigger GC before if you are only interested in live objects.</p>
+<p>Similar to what <code>jmap -histo</code> would do on openjdk but from inside the process. Would probably make sense to trigger GC right before that if you are only interested in live objects.</p>
 <p>(as of CE 20.1.0)</p>
 <pre class="prettyprint"><code class="language-java">import com.oracle.svm.core.heap.ClassHistogramVisitor;
 import com.oracle.svm.core.heap.Heap;
