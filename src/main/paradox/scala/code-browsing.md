@@ -10,7 +10,7 @@ Nice-to-have functionality would be:
 
  * "Go To Definition" (in single files, across files, across library boundaries)
  * Global "Find all usages" - reverse of "Go To Definition" to find where symbols are used
- * Global Search for symbols / documentation
+ * Global Search for symbols / documentation ("Hoogle for Scala")
  * Custom linking setup (for a resolved dependency graph with possibly pulled up dependencies)
  * Code statistics - similar content as was provided in my 2014 [Scala In Numbers](https://2014.sca.land/) talk
 
